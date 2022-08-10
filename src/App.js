@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from 'react'
+
+// custom hook to handle logic
+import useWordle from './hooks/useWordle'
+
+import Grid from './components/Grid'
+
+import './App.css'
+
 
 function App() {
+  // state to trigger focus change to new input field
+  const [changeFocus, setChangeFocus] = useState(true)
+  
+  //const secretWord = 'REACT'
+  const [ choices, activeIndex, activeRow, numRights, handleInput, handleKeyPress ] = useWordle()
+
+  useEffect(() => {
+    // set forcus to right input on re-render
+    document.querySelector(`input[name="${activeRow}${activeIndex}"]`).focus()
+  }, [changeFocus, activeIndex, activeRow])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Grid 
+      choices = {choices}
+      activeIndex = {activeIndex}
+      activeRow = {activeRow}
+      numRights = {numRights}
+      handleInput = {handleInput}
+      handleKeyPress = {handleKeyPress}
+      setChangeFocus = {setChangeFocus}
+    />
+  )
 }
 
-export default App;
+export default App

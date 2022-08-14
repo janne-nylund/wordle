@@ -182,7 +182,7 @@ const useWordle = () => {
           // delay for first letter
           setTimeout(() => {
             showWinLetters()
-          }, 2000);
+          }, 1000);
           
           setTimeout(() => {
               document.querySelectorAll('#wrapper input').forEach(element => {

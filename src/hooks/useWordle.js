@@ -200,7 +200,7 @@ const useWordle = () => {
             disabledInputs.forEach(item => {
               item.removeAttribute("disabled")
             })
-          }, 7000);    
+          }, 6000);    
         }
       })     
     }  

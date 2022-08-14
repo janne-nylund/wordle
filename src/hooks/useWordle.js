@@ -9,7 +9,7 @@ const initialChoices = [
   ['', '', '', '', '']
 ]
 
-const secretWords = ['REACT', 'REMIX', 'REDUX']
+const secretWords = ['REACT', 'REMIX', 'REDUX', 'CONST', 'ARRAY']
 
 const useWordle = () => {
 
@@ -68,7 +68,7 @@ const useWordle = () => {
             const showWinLetters = async () => {
               for (const input of inputs) {
                 // increases the speed for every letter e.g. shorter sleep
-                await sleep(800 - (30 * inputs.indexOf(input)));
+                await sleep(600 - (30 * inputs.indexOf(input)));
                 input.style.backgroundColor="red" 
                 input.value = winWord.charAt(inputs.indexOf(input))
                 
@@ -78,7 +78,7 @@ const useWordle = () => {
             // delay for first letter
             setTimeout(() => {
               showWinLetters()
-            }, 2000);
+            }, 1000);
             
             setTimeout(() => {
                 document.querySelectorAll('#wrapper input').forEach(element => {

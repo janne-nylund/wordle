@@ -3,7 +3,8 @@ const Grid = ( {choices, activeRow, numRights, handleInput, handleKeyPress, setC
   return (
     <div id='wrapper' className="min-w-full min-h-screen mx-auto justify-center items-center text-center bg-slate-300">
     <div className="text-5xl font-bold font-display tracking-wide py-8">WORDLE</div>
-    <p><b>Just start typing. Press ENTER to submit.</b></p>
+    <p className="text-xl font-bold">Just start typing.</p>
+    <p className="text-base mb-3">ENTER to submit, BACKSPACE to delete.</p>
       {
         choices.map((row, index1) => (
           <div key={index1} id={`row${index1 + 1}`}> {

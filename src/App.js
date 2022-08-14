@@ -12,7 +12,6 @@ function App() {
   // state to trigger focus change to new input field
   const [changeFocus, setChangeFocus] = useState(true)
   
-  //const secretWord = 'REACT'
   const [ choices, activeIndex, activeRow, numRights, handleInput, handleKeyPress ] = useWordle()
 
   useEffect(() => {
